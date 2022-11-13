@@ -392,7 +392,7 @@ public:
     // -------------------------------------------------------------------------
     //! \brief Exported method to Godot script. Get mute state.
     // -------------------------------------------------------------------------
-    void isAudioMuted(const bool mute);
+    bool isAudioMuted();
 
     // -------------------------------------------------------------------------
     //! \brief Exported method to Godot script. Set the new keyboard state (char

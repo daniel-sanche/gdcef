@@ -189,7 +189,7 @@ void GDBrowserView::setAudioMuted(const bool mute)
 bool GDBrowserView::isAudioMuted()
 {
     if (m_browser == nullptr)
-        return ;
+        return false;
 
     return m_browser->GetHost()->IsAudioMuted();
 }
