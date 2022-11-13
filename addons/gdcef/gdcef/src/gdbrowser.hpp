@@ -385,6 +385,15 @@ public:
     // -------------------------------------------------------------------------
     void mouseWheelHorizontal(const int wDelta);
 
+    //! \brief Exported method to Godot script. Mute browser audio.
+    // -------------------------------------------------------------------------
+    void setAudioMuted(const bool mute);
+
+    // -------------------------------------------------------------------------
+    //! \brief Exported method to Godot script. Get mute state.
+    // -------------------------------------------------------------------------
+    void isAudioMuted(const bool mute);
+
     // -------------------------------------------------------------------------
     //! \brief Exported method to Godot script. Set the new keyboard state (char
     //! typed ...).
