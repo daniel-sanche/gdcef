@@ -165,6 +165,24 @@ void GDBrowserView::mouseWheel(const int wDelta)
 }
 
 //------------------------------------------------------------------------------
+void GDBrowserView::setAudioMuted(const bool mute)
+{
+    if (m_browser == nullptr)
+        return ;
+
+    m_browser->GetHost()->SetAudioMuted(mute);
+}
+
+//------------------------------------------------------------------------------
+bool GDBrowserView::isAudioMuted()
+{
+    if (m_browser == nullptr)
+        return ;
+
+    return m_browser->GetHost()->IsAudioMuted();
+}
+
+//------------------------------------------------------------------------------
 static uint32_t getKeyboardModifiers(bool shift, bool alt, bool ctrl)
 {
     uint32_t modifiers = 0;

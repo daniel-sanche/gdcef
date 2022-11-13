@@ -61,6 +61,8 @@ void GDBrowserView::_register_methods()
     godot::register_method("on_mouse_middle_down", &GDBrowserView::middleMouseDown);
     godot::register_method("on_mouse_middle_up", &GDBrowserView::middleMouseUp);
     godot::register_method("on_mouse_wheel", &GDBrowserView::mouseWheel);
+    godot::register_method("set_muted", &GDBrowserView::setAudioMuted);
+    godot::register_method("is_muted", &GDBrowserView::setAudioMuted);
 
     godot::register_signal<GDBrowserView>("page_loaded", "node", GODOT_VARIANT_TYPE_OBJECT);
 }
