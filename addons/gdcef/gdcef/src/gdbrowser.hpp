@@ -58,6 +58,7 @@
 #  include "cef_render_handler.h"
 #  include "cef_client.h"
 #  include "cef_app.h"
+#  include "cef_browser_view.h"
 #  include "wrapper/cef_helpers.h"
 
 #  include <iostream>
@@ -229,6 +230,11 @@ public:
     //! \brief Exported method to Godot script. Set the render zoom level.
     // -------------------------------------------------------------------------
     void setZoomLevel(double delta);
+
+    // -------------------------------------------------------------------------
+    //! \brief Exported method to Godot script. Get the size of the web content.
+    // -------------------------------------------------------------------------
+    godot::Vector2 getContentSize();
 
     // -------------------------------------------------------------------------
     //! \brief Exported method to Godot script. Load the given web page

@@ -39,6 +39,7 @@ void GDBrowserView::_register_methods()
     godot::register_method("is_valid", &GDBrowserView::isValid);
     godot::register_method("get_texture", &GDBrowserView::texture);
     godot::register_method("set_zoom_level", &GDBrowserView::setZoomLevel);
+    godot::register_method("get_content_size", &GDBrowserView::getContentSize);
     godot::register_method("load_url", &GDBrowserView::loadURL);
     godot::register_method("is_loaded", &GDBrowserView::loaded);
     godot::register_method("get_url", &GDBrowserView::getURL);
@@ -189,6 +190,25 @@ void GDBrowserView::setZoomLevel(double delta)
 
     m_browser->GetHost()->SetZoomLevel(delta);
 }
+
+
+//------------------------------------------------------------------------------
+godot::Vector2 GDBrowserView::getContentSize()
+{
+
+    if (!m_browser)
+        return godot::Vector2(-1, -1);
+
+    CefRefPtr<CefBrowserView> m_browser_view = CefBrowserView::GetForBrowser(m_browser);
+    if (!m_browser_view) {
+        return godot::Vector2(-1, -1);
+    } else {
+        CefSize size = m_browser_view->GetSize();
+        return godot::Vector2(float(size.width), float(size.height));
+    }
+}
+
+
 
 //------------------------------------------------------------------------------
 void GDBrowserView::loadURL(godot::String url)
