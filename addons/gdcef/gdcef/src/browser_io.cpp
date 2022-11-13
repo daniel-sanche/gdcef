@@ -167,6 +167,7 @@ void GDBrowserView::mouseWheel(const int wDelta)
 //------------------------------------------------------------------------------
 bool GDBrowserView::setAudioMuted(bool mute)
 {
+    CEF_REQUIRE_UI_THREAD();
     if (m_browser == nullptr)
         return false;
 
@@ -177,6 +178,7 @@ bool GDBrowserView::setAudioMuted(bool mute)
 //------------------------------------------------------------------------------
 bool GDBrowserView::isAudioMuted()
 {
+    CEF_REQUIRE_UI_THREAD();
     if (m_browser == nullptr)
         return false;
 
