@@ -165,12 +165,13 @@ void GDBrowserView::mouseWheel(const int wDelta)
 }
 
 //------------------------------------------------------------------------------
-void GDBrowserView::setAudioMuted(bool mute)
+bool GDBrowserView::setAudioMuted(bool mute)
 {
     if (m_browser == nullptr)
-        return ;
+        return false;
 
     m_browser->GetHost()->SetAudioMuted(mute);
+    return m_browser->GetHost()->IsAudioMuted();
 }
 
 //------------------------------------------------------------------------------
