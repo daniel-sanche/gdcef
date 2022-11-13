@@ -193,8 +193,8 @@ static void configureCEF(fs::path const& folder, CefSettings& cef_settings,
     // then it must be an absolute path. Failure to set this value correctly may
     // result in the sandbox blocking read/write access to the cache_path
     // directory.
-    CefString(&cef_settings.root_cache_path)
-            .FromString(sub_process_cache.string());
+    //CefString(&cef_settings.root_cache_path)
+    //        .FromString(sub_process_cache.string());
 
     // The locale string that will be passed to WebKit. If empty the default
     // locale of "en-US" will be used. This value is ignored on Linux where
