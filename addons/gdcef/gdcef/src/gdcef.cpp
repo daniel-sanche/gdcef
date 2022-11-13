@@ -102,20 +102,20 @@ void GDCef::_init()
 
     // Check if this process is executing from the Godot editor or from the
     // your standalone application.
-    if (isStartedFromGodotEditor())
-    {
-        folder = std::filesystem::current_path() / "build";
-        GDCEF_DEBUG_VAL("Launching CEF from Godot editor");
-        GDCEF_DEBUG_VAL("Path where your project Godot files shall be located:"
-                        << folder);
-    }
-    else
-    {
-        folder = real_path();
-        GDCEF_DEBUG_VAL("Launching CEF from your executable");
-        GDCEF_DEBUG_VAL("Path where your application files shall be located:"
-                        << folder);
-    }
+    //if (isStartedFromGodotEditor())
+    //{
+    folder = std::filesystem::current_path() / "thirdparty/gdcef/build";
+    GDCEF_DEBUG_VAL("Launching CEF from Godot editor");
+    GDCEF_DEBUG_VAL("Path where your project Godot files shall be located:"
+                    << folder);
+    //}
+    //else
+    //{
+    //    folder = real_path();
+    //    GDCEF_DEBUG_VAL("Launching CEF from your executable");
+    //    GDCEF_DEBUG_VAL("Path where your application files shall be located:"
+    //                    << folder);
+    //}
 
     // Check if needed files to make CEF working are present.
     if (!sanity_checks(folder))
