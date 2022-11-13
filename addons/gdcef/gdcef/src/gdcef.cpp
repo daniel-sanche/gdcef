@@ -180,11 +180,11 @@ static void configureCEF(fs::path const& folder, CefSettings& cef_settings,
     // CefRequestContext instances via the CefRequestContextSettings.cache_path
     // value. When using the Chrome runtime the "default" profile will be used
     // if |cache_path| and |root_cache_path| have the same value.
-    fs::path sub_process_cache = { folder / "cache" };
-    std::cout << "[GDCEF][GDCef::configureCEF] Setting cache path: "
-              << sub_process_cache.string() << std::endl;
-    CefString(&cef_settings.cache_path)
-            .FromString(sub_process_cache.string());
+    //fs::path sub_process_cache = { folder / "cache" };
+    //std::cout << "[GDCEF][GDCef::configureCEF] Setting cache path: "
+    //          << sub_process_cache.string() << std::endl;
+    //CefString(&cef_settings.cache_path)
+    //        .FromString(sub_process_cache.string());
 
     // The root directory that all CefSettings.cache_path and
     // CefRequestContextSettings.cache_path values must have in common. If this
@@ -201,7 +201,7 @@ static void configureCEF(fs::path const& folder, CefSettings& cef_settings,
     // locale is determined using environment variable parsing with the
     // precedence order: LANGUAGE, LC_ALL, LC_MESSAGES and LANG. Also
     // configurable using the "lang" command-line switch.
-    CefString(&cef_settings.locale).FromString("fr");
+    CefString(&cef_settings.locale).FromString("en-US");
 
     // The directory and file name to use for the debug log. If empty a default
     // log file name and location will be used. On Windows and Linux a
