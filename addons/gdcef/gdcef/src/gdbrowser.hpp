@@ -377,7 +377,7 @@ public:
     // -------------------------------------------------------------------------
     //! \brief Exported method to Godot script. Mute browser audio.
     // -------------------------------------------------------------------------
-    void setAudioMuted(const bool mute);
+    void setAudioMuted(bool mute);
 
     // -------------------------------------------------------------------------
     //! \brief Exported method to Godot script. Get mute state.
